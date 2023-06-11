@@ -53,6 +53,7 @@ const linkStyles = css`
 const cardStyles = css`
   margin-bottom: 20px;
   justify-content: center;
+  transition: transform 0.3s ease-in-out;
   img {
     width: 100%;
     height: auto;
@@ -64,5 +65,9 @@ const cardStyles = css`
     margin: 0;
     font-weight: bold;
     font-size: 18px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 `;
