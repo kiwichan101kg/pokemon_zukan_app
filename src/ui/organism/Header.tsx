@@ -6,14 +6,12 @@ export function Header() {
   return (
     <div css={headerStyles}>
       <Link to={"/"}>
-        {/* <h1 css={titleStyles}>ポケモン図鑑</h1> */}
         <img
           css={titleStyles}
           src="https://fontmeme.com/permalink/230611/33a2913397b3e67dcb8d5833cc1ec747.png"
           alt="pokemon"
         />
       </Link>
-
       <div css={buttonContainerStyles}>
         <button css={buttonStyles}>検索</button>
         <button css={buttonStyles}>お気に入り</button>
