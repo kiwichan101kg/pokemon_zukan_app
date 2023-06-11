@@ -9,19 +9,23 @@ export const Footer = () => {
   // ポケモン情報のurlを取得する
   const { data: previous } = useGetPokeUrl(pokemonData?.previous);
   const { data: next } = useGetPokeUrl(pokemonData?.next);
+  const handleClickPrev = () => {
+    if (previous) {
+      setPokemonData(previous);
+    }
+  };
+  const handleClickNext = () => {
+    if (next) {
+      setPokemonData(next);
+    }
+  };
 
   return (
     <div css={footerStyle}>
-      <button
-        onClick={
-          () => setPokemonData(previous)
-          // previous ? setPokemonData(previous) : setPokemonData(pokemonData)
-        }
-        css={buttonStyles}
-      >
+      <button onClick={handleClickPrev} css={buttonStyles} disabled={!previous}>
         前へ
       </button>
-      <button onClick={() => setPokemonData(next)} css={buttonStyles}>
+      <button onClick={handleClickPrev} css={buttonStyles} disabled={!next}>
         次へ
       </button>
     </div>
@@ -48,9 +52,18 @@ const buttonStyles = css`
   box-shadow: 0px 0px 15px -5px #235e57;
   border-radius: 20px;
   transition: background-color 0.3s ease-in-out;
-
   cursor: pointer;
-  &:hover {
+
+  /* 非活性時のスタイル */
+  &:disabled {
+    background-color: #ccc;
+    color: #fff;
+    box-shadow: none;
+    cursor: default;
+  }
+
+  /* ホバー時のスタイル */
+  &:hover:not(:disabled) {
     background-color: #fece00;
   }
 `;
