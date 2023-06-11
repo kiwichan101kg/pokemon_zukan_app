@@ -42,22 +42,22 @@ const getJapaneseName = (enName: string) => {
 const linkStyles = css`
   display: block;
   text-decoration: none;
-  color: #333; /* リンクの色を指定 */
+  color: #235e57; /* リンクの色を指定 */
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: rgb(255, 166, 0); /* ホバー時の色を指定 */
+    color: #fece00;
   }
 `;
 
 const cardStyles = css`
-  /* display: flex; */
   margin-bottom: 20px;
   justify-content: center;
-
   img {
     width: 100%;
     height: auto;
+    box-shadow: 0px 0px 15px -5px #235e57;
+    border-radius: 20px;
   }
   p {
     text-align: center;

@@ -24,8 +24,8 @@ export const CardList = () => {
 
 const cardListStyles = css`
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4つのカラムを均等に配置 */
+  grid-template-columns: repeat(5, 1fr); /* 4つのカラムを均等に配置 */
   gap: 20px; /* カード間のスペース */
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1400px;
+  margin: 20px auto;
 `;
