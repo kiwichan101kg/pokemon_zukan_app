@@ -6,7 +6,12 @@ export function Header() {
   return (
     <div css={headerStyles}>
       <Link to={"/"}>
-        <h1 css={titleStyles}>ポケモン図鑑</h1>
+        {/* <h1 css={titleStyles}>ポケモン図鑑</h1> */}
+        <img
+          css={titleStyles}
+          src="https://fontmeme.com/permalink/230611/33a2913397b3e67dcb8d5833cc1ec747.png"
+          alt="pokemon"
+        />
       </Link>
 
       <div css={buttonContainerStyles}>
@@ -21,14 +26,13 @@ const headerStyles = css`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f0f0f0;
+  background-color: #49c5b6;
+  box-shadow: 0px 0px 15px -5px #235e57;
   padding: 20px;
 `;
 
 const titleStyles = css`
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+  width: 240px;
 `;
 
 const buttonContainerStyles = css`
@@ -37,14 +41,18 @@ const buttonContainerStyles = css`
 
 const buttonStyles = css`
   padding: 10px 20px;
-  background-color: #4a90e2;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
   margin-left: 10px;
-  cursor: pointer;
+  background-color: #eac84d;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  box-shadow: 0px 0px 15px -5px #235e57;
+  border-radius: 20px;
+  transition: background-color 0.3s ease-in-out;
 
+  cursor: pointer;
   &:hover {
-    background-color: #256fb5;
+    background-color: #fece00;
   }
 `;
