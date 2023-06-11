@@ -3,15 +3,11 @@ import React, { useEffect, useState } from "react";
 import { css, keyframes } from "@emotion/react";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
-import jaPokemonData from "../../infra/jaPokemon.json";
+import jaPokemonData from "../../../infra/jaPokemon.json";
+import { useJapaneseName } from "../hook";
 
 export const Card = ({ props }: any) => {
-  const [japaneseName, setJapaneseName] = useState<string>("");
-
-  useEffect(() => {
-    const japaneseName = getJapaneseName(props.name);
-    setJapaneseName(japaneseName);
-  }, []);
+  const japaneseName = useJapaneseName(props.name);
 
   return (
     <div css={[cardStyles]}>
@@ -34,7 +30,7 @@ export const Card = ({ props }: any) => {
  * @param enName ポケモン英名
  * @returns pokemonName ポケモン和名
  */
-const getJapaneseName = (enName: string) => {
+export const getJapaneseName = (enName: string) => {
   const pokemonName = jaPokemonData.find((v) => v.en.toLowerCase() === enName);
   return pokemonName ? pokemonName.ja : enName;
 };
