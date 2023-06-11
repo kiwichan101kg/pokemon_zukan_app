@@ -25,7 +25,7 @@ export const Footer = () => {
       <button onClick={handleClickPrev} css={buttonStyles} disabled={!previous}>
         前へ
       </button>
-      <button onClick={handleClickPrev} css={buttonStyles} disabled={!next}>
+      <button onClick={handleClickNext} css={buttonStyles} disabled={!next}>
         次へ
       </button>
     </div>
