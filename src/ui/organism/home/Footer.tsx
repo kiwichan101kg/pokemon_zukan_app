@@ -4,29 +4,21 @@ import { PokemonContext } from "../../page/context/pokeUrl";
 import { useGetPokeUrl } from "../../../usecase/fetchPokemon";
 
 export const Footer = () => {
-  const { pokemonData, setPokemonData } = useContext(PokemonContext);
+  const { pokemonUrl, setPokemonUrl } = useContext(PokemonContext);
 
   // ポケモン情報のurlを取得する
-  const { data: previous } = useGetPokeUrl(pokemonData?.previous);
-  const { data: next } = useGetPokeUrl(pokemonData?.next);
-  const handleClickPrev = () => {
-    if (previous) {
-      setPokemonData(previous);
-    }
-  };
-  const handleClickNext = () => {
+  const { data: next } = useGetPokeUrl(pokemonUrl?.next);
+
+  const handleClick = () => {
     if (next) {
-      setPokemonData(next);
+      setPokemonUrl(next);
     }
   };
 
   return (
     <div css={footerStyle}>
-      <button onClick={handleClickPrev} css={buttonStyles} disabled={!previous}>
-        前へ
-      </button>
-      <button onClick={handleClickNext} css={buttonStyles} disabled={!next}>
-        次へ
+      <button onClick={handleClick} css={buttonStyles} disabled={!next}>
+        読み込む
       </button>
     </div>
   );

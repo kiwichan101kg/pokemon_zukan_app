@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import useSWR from "swr";
+import useSWRInfinite from "swr/infinite";
 
 export const baseUrl = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -45,3 +46,17 @@ export const useGetPokemon = (urls: string[]) => {
     isError: error,
   };
 };
+
+// const getKey = (nextUrl: any, previousPageData: any) => {
+//   if (previousPageData && !previousPageData.length) return null; // 最後に到達した
+//   return nextUrl; // SWR キー
+// };
+
+// export const useGetNextPokemonDetail = (nextUrl: string, prevData: any) => {
+//   const { data, error, isLoading, isValidating, mutate, size, setSize } =
+//     useSWRInfinite(
+//       (nextUrl, prevData) => getKey(nextUrl, prevData),
+//       pokeUrlFetcher
+//     );
+//   return { data, error, isLoading, isValidating, mutate, size, setSize };
+// };
